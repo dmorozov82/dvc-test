@@ -1,0 +1,4 @@
+# Ignore all files in /data/
+/data/**
+# Except .dvc files (tracked by Git)
+!/data/**/*.dvc
