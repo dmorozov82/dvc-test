@@ -1,0 +1,6 @@
+[cache]
+    type = "hardlink,symlink"
+[core]
+    remote = mlops
+['remote "mlops"']
+    url = s3://localstack-mlops
