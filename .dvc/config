@@ -1,7 +1,0 @@
-[cache]
-    type = "hardlink,symlink"
-[core]
-    remote = mlops
-['remote "mlops"']
-    url = s3://localstack-mlops
-    endpointurl = http://localhost:4566
