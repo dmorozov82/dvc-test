@@ -81,3 +81,23 @@ Pushing
 dvc list . --remote=mlops
 curl http://localhost:4566/localstack-mlops
 awslocal s3 ls s3://localstack-mlops/ --recursive --human-readable
+
+### We will store our DATA in '/data' folder, so we must Set Up .gitignore for DVC
+Add /data to .gitignore but keep tracking .dvc files in Git:
+
+```powershell
+# Create .gitignore if it doesn't exist
+if (!(Test-Path .gitignore)) { New-Item .gitignore -ItemType File }
+# Add rules to ignore /data/ but keep .dvc files
+@"
+# Ignore all files in /data/
+/data/**
+# Except .dvc files (tracked by Git)
+!/data/**/*.dvc
+"@ | Out-File -Append -Encoding utf8 .gitignore
+```
+
+```powershell
+git add .gitignore
+git commit -m "Ignore data folder but track .dvc files"
+```
