@@ -2,6 +2,7 @@
 Testing DVC integration with VS Code and LocalStack
 
 ## Development Environment Setup
+Check README-LS.md for guide to setup LocalStack
 
 ### VS Code Configuration
 1. Set default line endings (LF):
