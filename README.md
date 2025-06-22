@@ -107,3 +107,15 @@ git commit -m "Ignore data folder but track .dvc files"
 - Git ignores raw data (e.g., data/file.jpg)
 - Git tracks .dvc files (data/file.jpg.dvc)
 - DVC uses .dvc files to manage the actual data in remote storage
+
+
+
+
+# NOTES:
+## Complitely reinit dvc:
+```powershell 
+Remove-Item -Force .dvc/config .dvc/config.local
+# Reinitialize DVC config
+dvc init --force
+```
+
