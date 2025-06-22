@@ -1,6 +1,3 @@
-Here's a more polished and organized version of your README.md:
-
-```markdown
 # DVC Test Project
 Testing DVC integration with VS Code and LocalStack
 
@@ -16,7 +13,7 @@ Testing DVC integration with VS Code and LocalStack
    ```ini
    [*]
    end_of_line = lf
-   ```
+
 
 ### System Tools Installation (Admin)
 ```powershell
