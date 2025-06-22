@@ -1,0 +1,25 @@
+# DVC Cache
+.dvc/cache
+
+# DVC temporary files
+.dvc/tmp
+
+# DVC plots
+.dvc/plots
+
+# DVC lock files
+dvc.lock
+
+# Data directory (ignore all files)
+data/*
+
+# But explicitly track directories
+!data/
+
+# Except .dvc files (tracked by Git)
+!data/*.dvc
+
+# Other files to ignore (e.g., Python virtual environment)
+.venv
+__pycache__/
+*.pyc

@@ -1,0 +1,11 @@
+[core]
+    remote = mlops
+    autostage = true
+['remote "mlops"']
+    url = s3://mlops
+    endpointurl = http://localhost:4566
+    use_ssl = false
+    access_key_id = test
+    secret_access_key = test
+    region = us-east-1
+    listobjects = true
