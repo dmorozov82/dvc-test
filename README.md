@@ -101,3 +101,8 @@ if (!(Test-Path .gitignore)) { New-Item .gitignore -ItemType File }
 git add .gitignore
 git commit -m "Ignore data folder but track .dvc files"
 ```
+
+### Why This Works for DVC
+- Git ignores raw data (e.g., data/file.jpg)
+- Git tracks .dvc files (data/file.jpg.dvc)
+- DVC uses .dvc files to manage the actual data in remote storage
