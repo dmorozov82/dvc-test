@@ -53,4 +53,31 @@ dvc init
 dvc remote add -d mlops s3://localstack-mlops
 > Setting 'mlops' as a default remote.
 
-dvc add .\data\test.txt
+dvc add .\data\test.txt  # this will add file to dvc repo, create cache, etc.. 
+
+### Configure AWS Credentials for LocalStack
+LocalStack typically uses dummy credentials. Add them to your environment:
+``` PowerShell
+$env:AWS_ACCESS_KEY_ID="test"
+$env:AWS_SECRET_ACCESS_KEY="test"
+$env:AWS_DEFAULT_REGION="us-east-1"
+```
+### Configure DVC to use LocalStack's endpoint
+LocalStack runs on http://localhost:4566 by default. Tell DVC to use it:
+``` powershell
+dvc remote modify mlops endpointurl http://localhost:4566
+dvc remote modify mlops --local use_ssl false  # Disable HTTPS (LocalStack uses HTTP)
+```
+### Try dvc push to s3
+``` powershell
+dvc push
+```
+> Output:
+Collecting
+Pushing
+1 file pushed   
+
+### Check remote s3
+dvc list . --remote=mlops
+curl http://localhost:4566/localstack-mlops
+awslocal s3 ls s3://localstack-mlops/ --recursive --human-readable
