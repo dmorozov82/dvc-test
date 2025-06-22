@@ -49,6 +49,7 @@ C:\Users\<YOUR_NAME>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11
 
 # Begin to work with DVC
 dvc config cache.type hardlink,symlink
+dvc config core.autostage true
 dvc init
 dvc remote add -d mlops s3://localstack-mlops
 > Setting 'mlops' as a default remote.
